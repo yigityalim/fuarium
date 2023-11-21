@@ -9,6 +9,12 @@
 # testing
 /coverage
 
+# jetbrains
+.idea
+
+# vscode
+.vscode
+
 # next.js
 /.next/
 /out/
@@ -27,6 +33,10 @@ yarn-error.log*
 
 # local env files
 .env*.local
+
+# dev and prod env files
+.env.development
+.env.production
 
 # vercel
 .vercel
