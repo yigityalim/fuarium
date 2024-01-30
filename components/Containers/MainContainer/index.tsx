@@ -11,5 +11,7 @@ const MainContainer = React.forwardRef<HTMLDivElement, MainContainerProps>(
     }
 )
 
+MainContainer.displayName = 'MainContainer'
+
 export { MainContainer }
 export type { MainContainerProps }
