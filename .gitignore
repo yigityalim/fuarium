@@ -15,6 +15,9 @@
 
 # production
 /build
+.idea
+.vscode
+.husky
 
 # misc
 .DS_Store
