@@ -12,13 +12,13 @@ export function ToggleMenu(): React.JSX.Element {
             <div className='flex h-full w-full flex-col items-center justify-center gap-y-2'>
                 <span
                     className={cn(
-                        'h-0.5 w-2/3 bg-white transition-all duration-300 dark:bg-white',
+                        'h-0.5 w-2/3 bg-black transition-all duration-300 dark:bg-white',
                         isOpen && 'translate-y-[5px] rotate-45 transform'
                     )}
                 />
                 <span
                     className={cn(
-                        'h-0.5 w-2/3 bg-white transition-all duration-300 dark:bg-white',
+                        'h-0.5 w-2/3 bg-black transition-all duration-300 dark:bg-white',
                         isOpen && '-translate-y-[5px] -rotate-45 transform'
                     )}
                 />

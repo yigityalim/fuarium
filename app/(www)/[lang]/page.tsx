@@ -11,7 +11,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
             <div className='container'>
                 <h1 className='text-3xl font-bold'>{page.home.title}</h1>
                 <p className='text-gray-500'>{page.home.description}</p>
-                <div className='h-[5000px]'>a</div>
+                <div className='h-[1000px]'>a</div>
                 <LocaleSwitcher />
                 <ThemeSwitcher />
             </div>
