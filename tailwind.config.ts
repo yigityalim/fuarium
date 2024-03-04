@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
 
 const config = {
     darkMode: ['class'],
@@ -10,6 +11,12 @@ const config = {
             screens: {
                 '2xl': '1400px',
             },
+        },
+        colors: {
+            brand: {
+                DEFAULT: '#1C325D',
+            },
+            ...colors,
         },
         extend: {
             keyframes: {

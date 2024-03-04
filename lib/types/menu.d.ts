@@ -1,16 +1,16 @@
-import React from "react";
-import { MetadataRoute } from "next";
-import { Locale } from '@/i18n.config'
+import { MetadataRoute } from 'next'
+import { IconProps } from '@/lib/icons'
 
-type Menu = {
-  id: string;
-  url: `/${string}`;
-  title: Record<Locale, string>
-  icon?: string | React.ReactNode;
-  lastModified: MetadataRoute.Sitemap["lastModified"];
-  changeFrequency: MetadataRoute.Sitemap["changeFrequency"];
-  priority: MetadataRoute.Sitemap["priority"];
-  children?: Menu[];
-};
+interface Menu {
+    id: string
+    url: string
+    title: string
+    description?: string
+    lastModified: MetadataRoute.Sitemap[number]['lastModified']
+    changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']
+    priority: MetadataRoute.Sitemap[number]['priority']
+    icons?: IconProps
+    children?: Menu[]
+}
 
-export type { Menu };
+export type { Menu }
