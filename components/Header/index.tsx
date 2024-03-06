@@ -9,11 +9,10 @@ import { useScroll } from '@/hooks/use-scroll'
 import { BrandIcon } from '@/lib/icons'
 import { useTheme } from 'next-themes'
 
-export default function Header(): React.ReactElement {
+export function Header(): React.ReactElement {
     const menu = useMenu((state) => state.menu)
     const setMenu = useMenu((state) => state.set)
     const handleScroll = useScroll(80, 150)
-    const { resolvedTheme } = useTheme()
 
     return (
         <>
@@ -34,7 +33,7 @@ export default function Header(): React.ReactElement {
                         setMenu(false)
                     }}
                 >
-                    <BrandIcon theme={resolvedTheme} />
+                    <BrandIcon />
                 </Link>
                 <div className='flex md:hidden'>
                     <ToggleMenu />

@@ -12,12 +12,6 @@ const config = {
                 '2xl': '1400px',
             },
         },
-        colors: {
-            brand: {
-                DEFAULT: '#1C325D',
-            },
-            ...colors,
-        },
         extend: {
             keyframes: {
                 'accordion-down': {

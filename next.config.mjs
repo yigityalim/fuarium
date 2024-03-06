@@ -1,11 +1,20 @@
-import createJiti from "jiti";
-const jiti = createJiti(new URL(import.meta.url).pathname);
+import createJiti from 'jiti'
+
+const jiti = createJiti(new URL(import.meta.url).pathname)
 
 jiti('./env.ts')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    transpilePackages: ['lucide-react']
-};
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'fuarium.de',
+            },
+        ],
+    },
+    transpilePackages: ['lucide-react'],
+}
 
-export default nextConfig;
+export default nextConfig

@@ -1,8 +1,10 @@
+'use client'
 import { LucideProps } from 'lucide-react'
 import dynamicIconImports from 'lucide-react/dynamicIconImports'
 import { UseThemeProps } from 'next-themes/dist/types'
 import dynamic from 'next/dynamic'
 import React from 'react'
+import { useTheme } from 'next-themes'
 
 interface IconProps extends LucideProps {
     name: keyof typeof dynamicIconImports
@@ -17,8 +19,9 @@ type BrandIconProps = React.HTMLAttributes<SVGElement> & {
     theme: UseThemeProps['resolvedTheme']
 }
 
-export const BrandIcon: React.FC<BrandIconProps> = ({ theme }) => {
-    return theme === 'dark' ? (
+export const BrandIcon = () => {
+    const {resolvedTheme} = useTheme()
+    return resolvedTheme === 'dark' ? (
         <svg
             xmlns='http://www.w3.org/2000/svg'
             preserveAspectRatio='xMidYMid'
@@ -47,7 +50,6 @@ export const BrandIcon: React.FC<BrandIconProps> = ({ theme }) => {
         </svg>
     )
 }
-
 
 export { Icon }
 export type { IconProps }

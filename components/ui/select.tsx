@@ -8,6 +8,8 @@ import { cn } from '@/lib/utils'
 
 const Select = SelectPrimitive.Root
 
+export type SelectPrimitiveProps = React.ComponentProps<typeof SelectPrimitive.Root>
+
 const SelectGroup = SelectPrimitive.Group
 
 const SelectValue = SelectPrimitive.Value

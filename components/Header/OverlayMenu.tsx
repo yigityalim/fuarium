@@ -94,9 +94,9 @@ export function OverlayMenu(): React.ReactElement {
                     <div className='flex w-full flex-col items-center justify-center gap-y-8 pt-[92px]'>
                         <motion.div
                             className='flex w-full flex-col items-center justify-start gap-4'
-                            initial={{ opacity: 0, x: 30 }}
+                            initial={{ opacity: 0, x: isGoingForward ? -30 : 30 }}
                             animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -30 }}
+                            exit={{ opacity: 0, x: isGoingForward ? 30 : -30 }}
                         >
                             <BrandSwitcher />
                             <ThemeSwitcher />

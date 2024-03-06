@@ -2,16 +2,27 @@
 
 import * as React from 'react'
 import { useTheme } from 'next-themes'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectPrimitiveProps,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select'
 import { cn } from '@/lib/utils'
 
-export function ThemeSwitcher(): React.ReactElement {
+interface ThemeSwitcherProps extends SelectPrimitiveProps {
+    className?: string
+}
+
+export function ThemeSwitcher({ className }: ThemeSwitcherProps): React.ReactElement {
     const { theme, setTheme, themes } = useTheme()
 
     return (
         <Select defaultValue='system' value={theme} onValueChange={(theme) => setTheme(theme)}>
             <SelectTrigger
-                className={cn('w-full sm:w-[200px] md:w-[250px] lg:w-[300px] xl:w-[350px] 2xl:w-[400px]')}
+                className={cn('w-full sm:w-[200px] md:w-[250px] lg:w-[300px] xl:w-[350px] 2xl:w-[400px]', className)}
                 tabIndex={0}
                 role='button'
             >
