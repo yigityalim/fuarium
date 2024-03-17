@@ -1,4 +1,4 @@
-import { Container } from '@/components/Containers'
+import { Container } from '../../../components/Containers'
 import React from 'react'
 
 export default function Page(): React.ReactElement {

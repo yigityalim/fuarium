@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { siteConfig } from '@/config/siteConfig'
 
 export default function robots(): MetadataRoute.Robots {
     return {
@@ -7,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/api', '/vercel.svg', '/sitemap.xml'],
         },
-        sitemap: `https://fuarium.vercel.app/sitemap.xml`,
-        host: `https://fuarium.vercel.app`,
+        sitemap: `${siteConfig.url}/sitemap.xml`,
+        host: `${siteConfig.url}`,
     }
 }

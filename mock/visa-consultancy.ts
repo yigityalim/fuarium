@@ -7,6 +7,8 @@ export const visaConsultancy = [
         title: 'İtalya Vize Ayrıntıları',
         image: 'https://fuarium.de/siteyedegii/files/vize_ust/italy.jpg',
         href: '/visa-consultancy/italy',
+        bannerImage:
+            'https://www.freewebheaders.com/wp-content/gallery/travel-world-size-800x200_1/grand-triumphal-colosseum-rome-italy-banner_size-800x200.jpg',
         description: 'İtalya vizesi almak isteyenlerin dikkat etmesi gereken noktaları bu yazımızda bulabilirsiniz.',
         data: {
             title: 'Aşağıda bulunan evrak listesi İtalya Büyükelçiliği / Konsolosluklarının ilan ettiği 2017 yılı güncel evrak listesidir.',

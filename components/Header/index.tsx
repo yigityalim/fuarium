@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { Suspense } from 'react'
 import { useMenu } from '@/store/menu'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
@@ -7,7 +7,7 @@ import { ToggleMenu } from '@/components/Header/ToggleMenu'
 import { OverlayMenu } from '@/components/Header/OverlayMenu'
 import { useScroll } from '@/hooks/use-scroll'
 import { BrandIcon } from '@/lib/icons'
-import { useTheme } from 'next-themes'
+import { Spinner } from '@/components/Spinner'
 
 export function Header(): React.ReactElement {
     const menu = useMenu((state) => state.menu)
@@ -18,23 +18,24 @@ export function Header(): React.ReactElement {
         <>
             <header
                 className={cn(
-                    'container sticky top-0 z-[53] mx-auto flex w-full items-center justify-between bg-white bg-opacity-60 px-6 py-4 saturate-200 backdrop-blur-xl transition duration-300 dark:bg-black dark:bg-opacity-70 dark:backdrop-blur-2xl md:p-10 lg:p-12 xl:p-16',
+                    'container sticky top-0 z-[53] mx-auto flex w-full items-center justify-between bg-white bg-opacity-60 p-4 saturate-200 backdrop-blur-xl transition duration-300 dark:bg-black dark:bg-opacity-70 dark:backdrop-blur-2xl md:p-10 lg:p-12 xl:p-16',
                     {
-                        'translate-y-0': handleScroll,
-                        'translate-y-[-92px]': !handleScroll,
+                        //'translate-y-0': handleScroll,
+                        //'translate-y-[-92px]': !handleScroll,
                     }
                 )}
             >
-                <Link
-                    href='/'
-                    className='flex h-[60px] w-[200px] cursor-pointer items-center justify-center'
-                    onClick={() => {
-                        window.scrollTo({ top: 0, behavior: 'smooth' })
-                        setMenu(false)
-                    }}
-                >
-                    <BrandIcon />
-                </Link>
+                <Suspense fallback={<Spinner className='h-12 w-12' />}>
+                    <BrandIcon
+                        asLink
+                        href='/'
+                        onClick={() => {
+                            window.scrollTo({ top: 0, behavior: 'smooth' })
+                            setMenu(false)
+                        }}
+                        className='flex h-[60px] w-[200px] cursor-pointer items-center justify-center'
+                    />
+                </Suspense>
                 <div className='flex md:hidden'>
                     <ToggleMenu />
                 </div>

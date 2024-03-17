@@ -4,6 +4,7 @@ import { visaConsultancy } from '@/mock/visa-consultancy'
 import { notFound } from 'next/navigation'
 import { Balancer } from '@/components/Typography/balancer'
 import { VisaImage, type VisaImageProps } from '@/lib/visa'
+import { Metadata } from 'next'
 
 interface PageProps {
     params: {
@@ -11,12 +12,26 @@ interface PageProps {
     }
 }
 
+export async function generateStaticParams() {
+    return visaConsultancy.map((country) => ({
+        params: {
+            country: country.id,
+        },
+    }))
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+    return {
+        title: 'Vize Danışmanlığı',
+        description: 'Vize danışsupabmanlığı sayfası',
+    }
+}
+
 export default function Page({ params }: PageProps): React.ReactElement {
     const country = visaConsultancy.find((c) => c.id === params.country) ?? notFound()
     return (
-        <Container>
+        <Container title={country.country}>
             <div className='flex h-full w-full flex-col items-center justify-center gap-6'>
-                <h1 className='w-full text-start text-5xl font-bold'>{country.country}</h1>
                 <h2 className='w-full text-start text-2xl font-bold'>{country.title}</h2>
                 <Balancer>{country.description}</Balancer>
                 <ul className='flex w-full list-none flex-col items-start justify-start gap-4 text-start'>

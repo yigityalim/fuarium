@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import { ThemeSwitcher } from '@/components/ThemeSwitcher'
-import { BrandSwitcher } from '@/components/BrandSwitcher'
+import { ThemeSwitcher } from '@/components/theme-switcher'
+import { BrandSwitcher } from '@/components/brand-switcher'
 import type { Menu } from '@/lib/types/menu'
 import { cn } from '@/lib/utils'
 import { useMenu } from '@/store/menu'
@@ -29,7 +29,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, url, isGoingForward, closeMen
         className='z-10 flex w-full items-center justify-between gap-x-4 text-4xl font-bold leading-9 tracking-wider'
     >
         <Link href={url} className='flex w-full flex-row items-center justify-center gap-x-2' onClick={closeMenu}>
-            <div className='w-full whitespace-nowrap text-start text-2xl font-bold'>
+            <div className='w-full text-start text-2xl font-bold leading-9 tracking-wider'>
                 <Balancer>{item.title}</Balancer>
             </div>
         </Link>

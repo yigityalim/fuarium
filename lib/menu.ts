@@ -1,8 +1,5 @@
 import { Menu } from '@/lib/types/menu'
 
-// TODO - burada şöyle bir logic olmalı: alt menülerde title yoksa, üst menüdeki title kullanılmalı
-// FIXME - "_" ile işaretlenmiş menüler aslında title etiketine sahip olmayacak, sadece children olacak. veya buna mantıklı bir çözüm bul.
-
 const fairSupports = {
     id: 'fair-supports',
     url: '/fair-supports',
@@ -10,7 +7,7 @@ const fairSupports = {
     children: [
         {
             id: 'government-supports',
-            url: '/fair-supports/government',
+            url: '/fair-supports/state-supports',
             title: 'Devlet Destekleri',
             lastModified: new Date(),
             changeFrequency: 'monthly',
@@ -52,13 +49,13 @@ const fairTours = {
     title: 'Fuar Turları',
     children: [
         {
-            id: 'fair-tours-cars',
+            id: 'fair-tours-automobile',
             url: '/fair-tours/automobile',
             title: 'Otomobil Fuarları',
             children: [
                 {
-                    id: 'iaa-fair',
-                    url: '/fair-tours/autmobile/iaa',
+                    id: 'iaa',
+                    url: '/fair-tours/automobile/iaa',
                     title: 'IAA',
                     description: 'Otomotiv ve Yan Sanayi Fuarı',
                     lastModified: new Date(),
@@ -76,7 +73,7 @@ const fairTours = {
             title: 'İnşaat Fuarları',
             children: [
                 {
-                    id: 'bauma-fair',
+                    id: 'bauma',
                     url: '/fair-tours/building/bauma',
                     title: 'BAUMA',
                     description: 'Yapı ve İnşaat Fuarı',
@@ -89,13 +86,29 @@ const fairTours = {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
+        {
+            id: 'fair-tours-food',
+            url: '/fair-tours/food',
+            title: 'Gıda Fuarları',
+            children: [
+                {
+                    id: 'anuga',
+                    url: '/fair-tours/food/anuga',
+                    title: 'ANUGA',
+                    description: 'Gıda ve İçecek Fuarı',
+                    lastModified: new Date(),
+                    changeFrequency: 'monthly',
+                    priority: 0.8,
+                },
+            ],
+        }
     ],
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.8,
 } as Menu satisfies Menu
 
-const vizaConsultancy = {
+const visaConsultancy = {
     id: 'visa-consultancy',
     url: '/visa-consultancy',
     title: 'Vize Danışmanlığı',
@@ -104,7 +117,7 @@ const vizaConsultancy = {
     priority: 0.8,
     children: [
         {
-            id: 'visa-consultancy-country',
+            id: 'visa-consultancy',
             url: '/visa-consultancy/italy',
             title: 'İtalya Vizesi',
             lastModified: new Date(),
@@ -112,7 +125,7 @@ const vizaConsultancy = {
             priority: 0.8,
         },
         {
-            id: 'visa-consultancy-country',
+            id: 'visa-consultancy',
             url: '/visa-consultancy/spain',
             title: 'İspanya Vizesi',
             lastModified: new Date(),
@@ -120,7 +133,7 @@ const vizaConsultancy = {
             priority: 0.8,
         },
         {
-            id: 'visa-consultancy-country',
+            id: 'visa-consultancy',
             url: '/visa-consultancy/germany',
             title: 'Almanya Vizesi',
             lastModified: new Date(),
@@ -128,7 +141,7 @@ const vizaConsultancy = {
             priority: 0.8,
         },
         {
-            id: 'visa-consultancy-country',
+            id: 'visa-consultancy',
             url: '/visa-consultancy/france',
             title: 'Fransa Vizesi',
             lastModified: new Date(),
@@ -157,7 +170,7 @@ const menus: Menu[] = [
     },
     fairSupports,
     fairTours,
-    vizaConsultancy,
+    visaConsultancy,
     {
         id: 'contact',
         url: '/contact',
@@ -168,5 +181,5 @@ const menus: Menu[] = [
     },
 ] as Menu[] satisfies Menu[]
 
-export { menus, fairTours, fairSupports, vizaConsultancy }
+export { menus, fairTours, fairSupports, visaConsultancy }
 export type { Menu }

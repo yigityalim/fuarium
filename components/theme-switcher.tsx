@@ -20,7 +20,11 @@ export function ThemeSwitcher({ className }: ThemeSwitcherProps): React.ReactEle
     const { theme, setTheme, themes } = useTheme()
 
     return (
-        <Select defaultValue='system' value={theme} onValueChange={(theme) => setTheme(theme)}>
+        <Select
+            defaultValue='light'
+            value={theme}
+            //onValueChange={(theme) => setTheme(theme)}
+        >
             <SelectTrigger
                 className={cn('w-full sm:w-[200px] md:w-[250px] lg:w-[300px] xl:w-[350px] 2xl:w-[400px]', className)}
                 tabIndex={0}

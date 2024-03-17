@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from '@/components/Containers'
+import { Container } from '../../../components/Containers'
 
 export default function Page(): React.ReactElement {
     return (

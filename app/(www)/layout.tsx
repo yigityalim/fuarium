@@ -1,38 +1,33 @@
 import React from 'react'
 import '@/styles/globals.css'
 import { Metadata } from 'next'
-import { Providers } from '@/components/Providers'
-import { Analytics } from '@/components/Analytics'
+import { Providers } from '@/components/providers'
+import { Analytics } from '@/components/analytics'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { cn } from '@/lib/utils'
 import { fontSans } from '@/lib/fonts'
 import { siteConfig } from '@/config/siteConfig'
+import { SpeedInsights } from '@/components/speed-insights'
 
 export default async function RootLayout({ children }: React.PropsWithChildren): Promise<React.ReactElement> {
     return (
         <html lang='tr' suppressHydrationWarning>
-            <body
-                className={cn(
-                    'bg-white text-black antialiased transition-colors duration-300 dark:bg-black dark:text-white',
-                    'min-h-screen',
-                    'flex flex-col items-center justify-start',
-                    'font-sans',
-                    fontSans.className
-                )}
-            >
+            <body className={cn('', fontSans.className)}>
                 <Providers
                     attribute='class'
-                    defaultTheme='system'
-                    enableSystem
-                    enableColorScheme
-                    disableTransitionOnChange
+                    defaultTheme='white'
+                    // FIXME- koyu mod logo sebebi ile bir süreliğine kapatıldı
+                    //enableSystem
+                    //enableColorScheme
+                    //disableTransitionOnChange
                 >
                     <Header />
                     {children}
                     <Footer />
                 </Providers>
                 <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     )
@@ -48,8 +43,12 @@ export const metadata = {
     keywords: [...siteConfig.keywords],
     authors: [
         {
-            name: 'shadcn',
-            url: 'https://shadcn.com',
+            name: 'yigityalim',
+            url: 'https://mehmetyigityalimcom',
+        },
+        {
+            name: 'berkaypolat',
+            url: 'https://berkaypolat.com.tr',
         },
     ],
     creator: 'yigityalim',
