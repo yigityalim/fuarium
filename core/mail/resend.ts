@@ -2,8 +2,6 @@
 
 import { Resend } from 'resend'
 
-import { env } from '@/env'
-
 import Onboard from './templates/onboard'
 
 enum Templates {
