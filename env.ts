@@ -2,7 +2,7 @@ import { createEnv } from '@t3-oss/env-core'
 import { z } from 'zod'
 import { vercel } from '@t3-oss/env-core/presets'
 
-export const env = createEnv({
+const env = createEnv({
     isServer: typeof window === undefined,
     server: {
         BASE_URL: z.string().url(),
