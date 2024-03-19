@@ -28,3 +28,19 @@ export const useScroll = (offset: number, initial?: number): boolean => {
 
     return show
 }
+
+export const useScrollToThreshold = (threshold?: number): boolean => {
+    const [scrollUp, setScrollUp] = useState<boolean>(false)
+
+    useEffect(() => {
+        if (!threshold) return
+        const handleScroll = () => void setScrollUp(window.scrollY > threshold)
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [threshold])
+
+    if (!threshold) return true
+    return scrollUp
+}

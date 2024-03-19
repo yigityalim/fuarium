@@ -1,5 +1,6 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
+import { Balancer } from '@/components/Typography/balancer'
 
 type HTMLHeadingElementProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>
 
@@ -24,7 +25,7 @@ function Heading({ children, className, as, ...props }: HeadingProps): React.Rea
                 className
             )}
         >
-            {children}
+            <Balancer>{children}</Balancer>
         </Component>
     )
 }
@@ -38,7 +39,7 @@ interface ParagraphProps
 function P({ children, className, ...props }: ParagraphProps): React.ReactElement {
     return (
         <p {...props} className={cn('leading-7 [&:not(:first-child)]:mt-4', className)}>
-            {children}
+            <Balancer>{children}</Balancer>
         </p>
     )
 }

@@ -18,6 +18,8 @@ import { Menu, menus } from '@/lib/menu'
 
 interface ContainerProps {
     className?: string
+    mainClassName?: string
+    breadcrumbClassName?: string
     title?: string
     bannerImage?: string
     description?: string
@@ -26,6 +28,8 @@ interface ContainerProps {
 function Container<Component extends As>({
     as,
     className,
+    mainClassName,
+    breadcrumbClassName,
     children,
     title,
     bannerImage,
@@ -68,9 +72,9 @@ function Container<Component extends As>({
                             )}
                         </div>
                     )}
-                    <main className='h-full w-full px-4 pb-8 pt-1 sm:px-6 lg:px-8'>
+                    <main className={cn('h-full w-full px-4 pb-8 pt-1 sm:px-6 lg:px-8', mainClassName)}>
                         {pathname !== '/' && (
-                            <Breadcrumb className='mb-4'>
+                            <Breadcrumb className={cn('mb-4', breadcrumbClassName)}>
                                 <BreadcrumbList>
                                     <BreadcrumbItem>
                                         <BreadcrumbLink href='/'>Anasayfa</BreadcrumbLink>

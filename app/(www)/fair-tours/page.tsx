@@ -5,10 +5,12 @@ import { FairToursCard } from '@/components/Cards/fair-tours'
 
 export default function Page(): React.ReactElement {
     return (
-        <Container title='Fuar Turları' description='Fuar turları anasayfa'>
-            {fairTours.map((tour) => (
-                <FairToursCard key={tour.id} tour={tour} />
-            ))}
+        <Container title='Fuar Turları'>
+            <div className='flex w-full flex-col items-center justify-center gap-4'>
+                {fairTours.map((tour) => (
+                    <FairToursCard key={tour.id} tour={tour} />
+                ))}
+            </div>
         </Container>
     )
 }

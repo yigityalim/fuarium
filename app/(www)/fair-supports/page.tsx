@@ -1,10 +1,6 @@
-import { Container } from '@/components/Containers'
 import React from 'react'
+import { FairSupports } from '@/components/Sections/fair-supports'
 
 export default function Page(): React.ReactElement {
-    return (
-        <Container>
-            <h1>Fuar Destekleri anasayfa</h1>
-        </Container>
-    )
+    return <FairSupports />
 }

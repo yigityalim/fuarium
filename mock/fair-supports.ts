@@ -1,6 +1,19 @@
+export interface FairSupport {
+    id: string
+    title: string
+    href: string
+    description: string
+    bannerImage: string
+    body: {
+        id: string
+        title: string
+        content: string[]
+    }[]
+}
+
 export const fairSupports = [
     {
-        id: 1,
+        id: 'Devlet Destekleri',
         title: 'Devlet Destekleri',
         href: '/fair-supports/state-supports',
         description: 'Devlet destekleri hakkında bilgi almak için tıklayınız.',
@@ -24,4 +37,20 @@ export const fairSupports = [
             },
         ],
     },
-] as const
+    {
+        id: 'Fabrika - Tesis Ziyaretleri',
+        title: 'Fabrika - Tesis Ziyaretleri',
+        href: '/fair-supports/factory-plant-visits',
+        description: 'Fabrika ve tesis ziyaretleri hakkında bilgi almak için tıklayınız.',
+        bannerImage: 'https://fuarium.de/siteyedegii/files/fuar_destekleri/ctm_fabrika_1.jpg',
+        body: [
+            {
+                id: 'fabrika-tesis-ziyaretleri',
+                title: 'Fabrika - Tesis Ziyaretleri',
+                content: [
+                    'Fuarium, Türkiye’deki firmaların Almanya’daki fabrika ve tesisleri ziyaret etmeleri için özel programlar düzenlemektedir. Bu programlar kapsamında, katılımcı firmaların ihtiyaçlarına göre özel olarak hazırlanan ziyaret programları sayesinde, katılımcı firmaların Almanya’daki firmalarla tanışmaları, işbirliği fırsatlarını değerlendirmeleri ve yeni iş ilişkileri kurmaları hedeflenmektedir.',
+                ],
+            },
+        ],
+    },
+] as FairSupport[] satisfies FairSupport[]

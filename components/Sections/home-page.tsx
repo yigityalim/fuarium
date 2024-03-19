@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { fairTours } from '@/mock/fair-tours'
 import { FairToursCard } from '@/components/Cards/fair-tours'
+import { cn } from '@/lib/utils'
 
 export function HomePage() {
     const [api, setApi] = React.useState<CarouselApi>()
@@ -40,9 +41,9 @@ export function HomePage() {
     ] as const
 
     return (
-        <main className='container mx-auto w-full'>
+        <>
             <Carousel
-                className='w-full p-0'
+                className='w-full p-0 pt-[72px] md:pt-0'
                 setApi={setApi}
                 plugins={[
                     Autoplay({
@@ -64,22 +65,42 @@ export function HomePage() {
                                     }}
                                     className='absolute left-1/3 top-1/2 w-3/4 -translate-x-1/3 -translate-y-1/2 transform *:text-white'
                                 >
-                                    <h1 className='w-full text-2xl font-bold'>{text.title}</h1>
-                                    <p className='w-full text-base font-medium'>{text.description}</p>
+                                    <h1 className='w-full text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl'>
+                                        {text.title}
+                                    </h1>
+                                    <p className='w-full text-base font-medium sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl'>
+                                        {text.description}
+                                    </p>
                                 </motion.div>
                             </div>
                         </CarouselItem>
                     ))}
                 </CarouselContent>
             </Carousel>
-            <Container className='mt-4'>
-                <h1 className='mb-3 text-2xl font-bold'>Bazı Fuar Turlarımı:</h1>
-                <div className='flex w-full flex-col items-start justify-center gap-2'>
-                    {fairTours.slice(0, 3).map((tour, index) => (
+            <Container className='py-4' mainClassName='mt-4 flex flex-col items-start justify-center gap-y-4'>
+                <Section title='Hakkımızda'>
+                    <p className='text-base font-normal'>
+                        Fuarium, 2006 yılında Almanya’da kurulmuş olup, Almanya’da düzenlenen fuarlar için katılımcı
+                        firmalara hizmet vermektedir. Fuarium, Almanya’da düzenlenen fuarlara katılmak isteyen Türk
+                        firmalarına, fuar organizasyonu, stand tasarımı, stand inşaatı, stand ekipmanları, lojistik,
+                        konaklama, transfer, tercümanlık, fuar sonrası hizmetler gibi birçok konuda hizmet vermektedir.
+                    </p>
+                </Section>
+                <Section title='Yaklaşan Fuarlarımız'>
+                    {fairTours.map((tour, index) => (
                         <FairToursCard key={index} tour={tour} />
                     ))}
-                </div>
+                </Section>
             </Container>
-        </main>
+        </>
+    )
+}
+
+function Section({ title, children, className, ...props }: React.ComponentProps<'section'>) {
+    return (
+        <section className={cn('container mx-auto w-full', className)} {...props}>
+            <h1 className='mb-3 text-3xl font-bold'>{title}</h1>
+            <div className='flex w-full flex-col items-start justify-center gap-2'>{children}</div>
+        </section>
     )
 }

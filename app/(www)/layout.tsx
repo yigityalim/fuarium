@@ -16,7 +16,7 @@ export default async function RootLayout({ children }: React.PropsWithChildren):
             <body className={cn('', fontSans.className)}>
                 <Providers
                     attribute='class'
-                    defaultTheme='white'
+                    defaultTheme='light'
                     // FIXME- koyu mod logo sebebi ile bir süreliğine kapatıldı
                     //enableSystem
                     //enableColorScheme
@@ -45,10 +45,6 @@ export const metadata = {
         {
             name: 'yigityalim',
             url: 'https://mehmetyigityalimcom',
-        },
-        {
-            name: 'berkaypolat',
-            url: 'https://berkaypolat.com.tr',
         },
     ],
     creator: 'yigityalim',

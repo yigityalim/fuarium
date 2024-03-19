@@ -8,7 +8,7 @@ enum Templates {
     Onboard = 'ONBOARD',
 }
 
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY)
+export const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY)
 
 const TEMPLATES = {
     [Templates.Onboard]: Onboard,

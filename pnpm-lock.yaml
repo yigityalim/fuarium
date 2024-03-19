@@ -32,6 +32,21 @@ dependencies:
   '@radix-ui/react-slot':
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.66)(react@18.2.0)
+  '@react-email/head':
+    specifier: ^0.0.7
+    version: 0.0.7(react@18.2.0)
+  '@react-email/html':
+    specifier: ^0.0.7
+    version: 0.0.7(react@18.2.0)
+  '@react-email/img':
+    specifier: ^0.0.7
+    version: 0.0.7(react@18.2.0)
+  '@react-email/preview':
+    specifier: ^0.0.8
+    version: 0.0.8(react@18.2.0)
+  '@react-email/tailwind':
+    specifier: ^0.0.14
+    version: 0.0.14(react@18.2.0)
   '@supabase/ssr':
     specifier: ^0.1.0
     version: 0.1.0(@supabase/supabase-js@2.39.8)

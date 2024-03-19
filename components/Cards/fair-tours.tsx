@@ -24,10 +24,7 @@ export function FairToursCard({ tour }: Readonly<{ tour: FairTour }>) {
                 </div>
             </CardContent>
             <CardFooter>
-                <Link
-                    href={`/fair-tours/${tour.href}`}
-                    className={cn('w-full', buttonVariants({ variant: 'secondary' }))}
-                >
+                <Link href={tour.url} className={cn('w-full', buttonVariants({ variant: 'secondary' }))}>
                     Detaylar
                 </Link>
             </CardFooter>
