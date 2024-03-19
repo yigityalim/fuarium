@@ -8,6 +8,9 @@ import Image from 'next/image'
 import { fairTours } from '@/mock/fair-tours'
 import { FairToursCard } from '@/components/Cards/fair-tours'
 import { cn } from '@/lib/utils'
+import { mockFairSupportsHomepage } from '@/mock/fair-supports-homepage'
+import Link from 'next/link'
+import { buttonVariants } from '../ui/button'
 
 export function HomePage() {
     const [api, setApi] = React.useState<CarouselApi>()
@@ -87,9 +90,49 @@ export function HomePage() {
                     </p>
                 </Section>
                 <Section title='Yaklaşan Fuarlarımız'>
-                    {fairTours.map((tour, index) => (
-                        <FairToursCard key={index} tour={tour} />
+                    <div className='flex w-full flex-col items-center justify-center gap-4 md:flex-row md:gap-8 lg:gap-12'>
+                        {fairTours.map((tour, index) => (
+                            <FairToursCard key={index} tour={tour} />
+                        ))}
+                    </div>
+                </Section>
+                <div className='my-4 flex w-full flex-col items-center justify-center gap-4 md:flex-row md:gap-8 lg:gap-12'>
+                    {mockFairSupportsHomepage.map((support, index) => (
+                        <div
+                            key={index}
+                            className='flex w-full flex-col items-center justify-center gap-4 sm:w-2/3 md:w-1/2'
+                        >
+                            <Image
+                                src={support.iconImage}
+                                alt={support.title}
+                                width={1920}
+                                height={1080}
+                                className='w-1/3 md:w-2/3 lg:w-3/4'
+                            />
+                            <h1 className='text-center text-3xl font-bold md:text-4xl'>{support.title}</h1>
+                            <p className='text-center text-base font-normal md:text-lg lg:text-xl'>{support.content}</p>
+                            <Link
+                                href={support.href}
+                                className={cn('w-3/4', buttonVariants({ variant: 'secondary', size: 'sm' }))}
+                            >
+                                Detaylı Bilgi
+                            </Link>
+                        </div>
                     ))}
+                </div>
+                <Section title='Vize İşlemlerinizi bize bırakın zamanınız size kalsın!'>
+                    <p className='text-base font-normal'>
+                        Yurtdışı fuar seyahatlerinizde kilit öneme sahip vize işlemlerinizi sizin için en hızlı ve en
+                        güvenilir şekilde yürütüyoruz. Hata kabul etmeyen vize işlemleri sürecinde, büyük bir titizlikle
+                        çalışan, alanında uzman ve profesyonel ekibimizle, vize işlemlerinizin her aşamasını özenle
+                        takip edip, sizlere kaliteli hizmeti sunuyoruz. Ciddi bir ön hazırlık gerektiren vize
+                        başvurularında Fuarium’un güvenilir ekibiyle çalışarak hem zamanınızdan hem de harcamalarınızdan
+                        tasarruf edeceksiniz. Hiçbir bürokratik soruna takılmadan ve zaman kaybına uğramadan vize
+                        almanız için tüm bilgi ve tecrübemizle sizlere hizmet veriyoruz.
+                    </p>
+                    <Link href='/visa-consultancy' className={cn('w-full', buttonVariants({ variant: 'secondary' }))}>
+                        Detaylı Bilgi
+                    </Link>
                 </Section>
             </Container>
         </>
@@ -99,8 +142,8 @@ export function HomePage() {
 function Section({ title, children, className, ...props }: React.ComponentProps<'section'>) {
     return (
         <section className={cn('container mx-auto w-full', className)} {...props}>
-            <h1 className='mb-3 text-3xl font-bold'>{title}</h1>
-            <div className='flex w-full flex-col items-start justify-center gap-2'>{children}</div>
+            <h1 className='mb-3 text-center text-3xl font-bold'>{title}</h1>
+            <div className='flex w-full flex-col items-start justify-center gap-2 text-center'>{children}</div>
         </section>
     )
 }

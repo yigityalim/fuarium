@@ -15,7 +15,7 @@ const fairSupports = {
         },
         {
             id: 'factory-facility-visits',
-            url: '/fair-supports/factory-facility-visits',
+            url: '/fair-supports/factory-plant-visits',
             title: 'Fabrika ve Tesis Ziyaretleri',
             lastModified: new Date(),
             changeFrequency: 'monthly',
@@ -101,7 +101,7 @@ const fairTours = {
                     priority: 0.8,
                 },
             ],
-        }
+        },
     ],
     lastModified: new Date(),
     changeFrequency: 'monthly',

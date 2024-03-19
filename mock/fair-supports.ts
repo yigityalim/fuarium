@@ -53,4 +53,57 @@ export const fairSupports = [
             },
         ],
     },
+    {
+        id: 'Dernek Ziyaretleri',
+        title: 'Dernek Ziyaretleri',
+        href: '/fair-supports/association-visits',
+        description: 'Dernek ziyaretleri hakkında bilgi almak için tıklayınız.',
+        bannerImage: 'https://fuarium.de/siteyedegii/files/dernek/dernek_yeni.jpg',
+        body: [
+            {
+                id: 'sektorunde-faaliyet-gosteren-dernek-federasyon-ve-stklarla-bir-arada-olma-firsati',
+                title: "SEKTÖRÜNDE FAALİYET GÖSTEREN DERNEK, FEDERASYON VE STK'LARLA BİR ARADA OLMA FIRSATI...",
+                content: [
+                    'Yurt dışı iş seyahati organizasyonlarınızda ilgili sektörünüze yönelik hedef kitleler, doğru kaynaklar ile sizleri buluşturuyor, yurt dışı fuar dernek ziyaretleri ile yeni iş fırsatlarınız için doğru bilgi alışverişi sağlamanızı önemsiyoruz. Bu kapsamda toplantılarınızı büyük bir titizlikle sizlerle planlıyor ve sizi doğru hedefler, doğru strateji ile sektörünüzün kalbine taşıyoruz.',
+                ],
+            },
+        ],
+    },
+    {
+        id: 'B2B - B2C Görüşmeler',
+        title: 'B2B - B2C Görüşmeler',
+        href: '/fair-supports/b2b-b2c-meetings',
+        description: 'B2B ve B2C görüşmeleri hakkında bilgi almak için tıklayınız.',
+        bannerImage: 'https://fuarium.de/siteyedegii/files/fuar_destekleri/ctm_b2b_2.jpg',
+        body: [
+            {
+                id: 'tum-dunya-ile-bir-araya-gelme-firsati',
+                title: 'Tüm Dünya İle Bir Araya Gelme Fırsatı',
+                content: [
+                    'Yurtdışı Fuar B2B & B2C görüşme, toplantı organizasyonları, toplantı salonu, ekipman kiralama ve ikram hizmetleri ile anahtar teslim organizasyon paketlerimizle sizlere hizmet vermekten memnuniyet duyuyoruz.',
+                ],
+            },
+            {
+                id: 'ekonomi-bakanliginin-destekledigi-ikili-is-görüsmeleri',
+                title: "Ekonomi Bakanlığı'nın Desteklediği İkili İş Görüşmeleri",
+                content: [
+                    'Ulusal ve uluslararası kongrelerle fuarlarda, doğru bağlantılar kurarak firmaların iş ağını genişletmek amacıyla resmi kurum ve kuruluşları, özel sektör profesyonelleri ve firmalarla görüşme talep etme imkânını sunan, Ekonomi Bakanlığı’nın desteklediği ikili iş görüşmelerini büyük bir titizlikle organize ediyoruz.',
+                ],
+            },
+            {
+                id: 'sonuc-odakli-is-gorusmeleri',
+                title: 'Sonuç Odaklı İş Görüşmeleri',
+                content: [
+                    'Dünya ticaretinde sağlam bir yer edinmeyi hedefleyen firmalarınızın amaçları doğrultusunda, hedef pazar - hedef ülke ve hedef ziyaretçi mantığımızla sonuç odaklı ikili iş görüşmelerinizi gerçekleştiriyoruz. Firmalarınızın sektörel ihtiyaçlarını baz alarak yaptığımız çalışmalarla uluslararası pazarda söz sahibi yabancı firmalar ile eşleştirmelerinizi sağlıyoruz.',
+                ],
+            },
+            {
+                id: 'ulusal-ve-uluslararasi-alicilar-ve-yatirimcilarla-ikili-is-gorusmeleri',
+                title: 'Ulusal ve Uluslararası Alıcılar ve Yatırımcılarla İkili İş Görüşmeleri',
+                content: [
+                    'Uluslararası pazarda yer alabilmek için doğru adımları sağlam atmanın gerekliliğini bilerek,  firmanızın ihtiyaçlarını ve pazar hedeflerini belirliyoruz. Firmalarınızın iş ağını genişletip, güçlendirmek amacıyla sizleri ulusal ve uluslararası alıcılar ve yatırımcılarla buluşturuyoruz.',
+                ],
+            },
+        ],
+    },
 ] as FairSupport[] satisfies FairSupport[]

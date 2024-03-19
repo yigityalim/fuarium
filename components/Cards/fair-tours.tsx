@@ -10,7 +10,7 @@ import { FairTour } from '@/mock/fair-tours'
 export function FairToursCard({ tour }: Readonly<{ tour: FairTour }>) {
     // TODO - Link komponentindeki href prop olarak eklenecek çünkü şu anda statik. bazı kullanımda değişebilir
     return (
-        <Card key={tour.id} className='w-full'>
+        <Card key={tour.id} className='w-full h-full'>
             <CardHeader>{tour.logo}</CardHeader>
             <CardContent>
                 <CardTitle className='text-3xl font-bold'>{tour.name}</CardTitle>

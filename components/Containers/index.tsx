@@ -88,9 +88,7 @@ function Container<Component extends As>({
                                                 menus,
                                                 `/${array.slice(0, index + 1).join('/')}`
                                             )
-                                            const title: string = menuMatch
-                                                ? menuMatch.title
-                                                : item.toLocaleUpperCase('tr-TR')
+                                            const title: string = menuMatch ? menuMatch.title : item
                                             return (
                                                 <BreadcrumbItem key={item}>
                                                     {index < array.length - 1 ? (

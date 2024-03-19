@@ -20,7 +20,7 @@ const passports = {
 } as const
 
 interface VizaImageProps extends React.ComponentProps<'svg'> {
-    name: 'passport' | 'special' | 'service' | 'diplomatic'
+    name: keyof typeof passports;
 }
 
 export function VizaImage({ name, ...props }: VizaImageProps): React.ReactElement {

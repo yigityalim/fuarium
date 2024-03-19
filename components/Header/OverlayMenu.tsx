@@ -91,7 +91,7 @@ export function OverlayMenu(): React.ReactElement {
                             'bg-white bg-opacity-70 saturate-200 backdrop-blur-lg dark:bg-black dark:bg-opacity-80 dark:backdrop-blur-lg'
                     )}
                 >
-                    <div className='flex w-full flex-col items-center justify-center gap-y-8 pt-[92px]'>
+                    <div className='flex w-full flex-col items-center justify-center gap-y-8 pt-[72px]'>
                         <motion.div
                             className='flex w-full flex-col items-center justify-start gap-4'
                             initial={{ opacity: 0, x: isGoingForward ? -30 : 30 }}
